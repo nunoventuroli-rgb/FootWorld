@@ -1,0 +1,124 @@
+export type TeamT = {
+  id: number;
+  careerId: number;
+  name: string;
+  sigla: string;
+  cor1: string;
+  cor2: string;
+  padrao: string;
+  badge: string;
+  pais: string;
+  estadio: string;
+  division: number;
+  nivel: number;
+  reputation: number;
+  saldo: number;
+  formation: string;
+  mentality: string;
+  pressing: string;
+  tempo: string;
+  trainingFocus: string;
+  trainingIntensity: string;
+  morale: number;
+  isControlled: boolean;
+  pontos: number;
+  jogos: number;
+  vitorias: number;
+  empates: number;
+  derrotas: number;
+  golsPro: number;
+  golsContra: number;
+};
+
+export type PlayerT = {
+  id: number;
+  teamId: number;
+  careerId: number;
+  name: string;
+  photo: string;
+  position: string;
+  ataque: number;
+  meio: number;
+  defesa: number;
+  idade: number;
+  forma: number;
+  morale: number;
+  potential: number;
+  trainingFocus: string;
+  isYouth: boolean;
+  gols: number;
+  jogos: number;
+  isStarter: boolean;
+  slotIndex: number;
+  transferListed: boolean;
+  askingPrice: number;
+  assists: number;
+  cleanSheets: number;
+  loanFrom: number;
+  outPosGames: number;
+};
+
+export type MatchT = {
+  id: number;
+  careerId: number;
+  round: number;
+  homeTeamId: number;
+  awayTeamId: number;
+  homeGoals: number;
+  awayGoals: number;
+  played: boolean;
+  scorers: string;
+  stats: string;
+};
+
+export type EmailT = {
+  id: number;
+  careerId: number;
+  round: number;
+  type: string;
+  subject: string;
+  body: string;
+  read: boolean;
+  offerPlayerId: number | null;
+  offerAmount: number | null;
+  offerStatus: string;
+  createdAt: string;
+};
+
+export type CareerT = {
+  id: number;
+  coachName: string;
+  coachPhoto: string;
+  coachAge: number;
+  coachNation: string;
+  controlledTeamId: number | null;
+  season: number;
+  seasonFormat: string;
+  baseYear: number;
+  leagueName: string;
+  leagueLogo: string;
+  currentRound: number;
+  cupData: string;
+  stateCup: string;
+  trophies: string;
+  scoutLevel: number;
+  boardTarget: number;
+  boardMood: number;
+  sponsorName: string;
+  sponsorPerRound: number;
+  sponsorMorale: number;
+  currency: string;
+  scoutedTeams: string;
+  nationalTeam: string;
+  worldCup: string;
+  worldLeagues: string;
+};
+
+export type CareerState = {
+  career: CareerT;
+  teams: TeamT[];
+  players: PlayerT[];
+  matches: MatchT[];
+  emails: EmailT[];
+  totalRounds: number;
+};
